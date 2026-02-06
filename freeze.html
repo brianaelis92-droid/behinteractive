@@ -5,85 +5,138 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FREEZE | BEH Interactive</title>
   <meta name="description" content="FREEZE is a nervous system regulation app designed to help users move through freeze states with grounding tools and guided flows." />
+  <meta name="theme-color" content="#0b1220" />
+
   <style>
+    :root{
+      --bg:#0b1220;
+      --text:#eaf0ff;
+      --muted: rgba(234,240,255,.72);
+      --line: rgba(234,240,255,.12);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      background:#0b1220;
-      color:#eaf0ff;
+      background: radial-gradient(900px 700px at 10% 10%, rgba(110,231,255,.16), transparent 55%),
+                  radial-gradient(900px 700px at 90% 20%, rgba(167,139,250,.14), transparent 55%),
+                  var(--bg);
+      color:var(--text);
       line-height:1.5;
     }
-    .wrap{max-width:900px;margin:0 auto;padding:36px 18px 60px}
-    a{color:#9ddcff}
-    .card{
-      border:1px solid rgba(234,240,255,.12);
-      background:rgba(255,255,255,.03);
-      border-radius:18px;
-      padding:20px;
-      margin-top:16px;
+    a{color:inherit}
+    .wrap{max-width:920px;margin:0 auto;padding:34px 18px 70px}
+    .top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; flex-wrap:wrap;
+      margin-bottom:16px;
     }
-    .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-    .btn{
+    .back{
       text-decoration:none;
+      color:rgba(234,240,255,.8);
+      border:1px solid var(--line);
+      border-radius:999px;
+      padding:10px 12px;
+      background: rgba(255,255,255,.03);
+    }
+    .back:hover{background: rgba(255,255,255,.06)}
+    .pill{
+      display:inline-block;
       padding:10px 12px;
       border-radius:999px;
-      border:1px solid rgba(234,240,255,.14);
-      background:rgba(255,255,255,.04);
-      color:#eaf0ff;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      text-decoration:none;
+      color:rgba(234,240,255,.82);
     }
-    .btn.primary{
+    .pill.primary{
       background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
-      border-color:transparent;
+      border-color: transparent;
       color:#0b1220;
       font-weight:700;
     }
-    ul{margin:10px 0 0 18px;color:rgba(234,240,255,.75)}
-    .small{color:rgba(234,240,255,.6);font-size:13px}
+    h1{margin:10px 0 6px; font-size: clamp(30px, 4vw, 44px); letter-spacing:-.6px}
+    p{margin:0; color:var(--muted); max-width: 75ch}
+    .cards{display:grid; gap:14px; margin-top:18px}
+    .card{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      border-radius: var(--radius);
+      padding:18px;
+    }
+    .card h2{margin:0 0 10px; font-size:18px}
+    ul{margin:10px 0 0 18px; color:var(--muted)}
+    .btnRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:14px}
+    .small{margin-top:12px; font-size:13px; color:rgba(234,240,255,.6)}
+    .kv{
+      display:grid;
+      grid-template-columns: 140px 1fr;
+      gap:8px 12px;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .kv b{color:rgba(234,240,255,.9)}
+    @media (max-width: 560px){
+      .kv{grid-template-columns: 1fr}
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <a href="/">← Back to BEH Interactive</a>
-
-    <h1 style="margin:14px 0 6px;">FREEZE</h1>
-    <p style="margin:0;color:rgba(234,240,255,.75);max-width:70ch;">
-      FREEZE is a nervous system regulation app designed to help users move through freeze states with grounding tools,
-      guided micro-flows, and supportive reflection.
-    </p>
-
-    <div class="card">
-      <h2 style="margin:0 0 8px;font-size:18px;">What it does</h2>
-      <ul>
-        <li>Guided grounding flows for freeze states</li>
-        <li>Tool-based prompts (with or without a physical kit)</li>
-        <li>Gentle reflection questions + “I did it” progress</li>
-        <li>Designed for clarity, calm, and low-friction use</li>
-      </ul>
-
-      <div class="btns">
-     <a class="pill primary" href="https://freeze-app.com">Try the web version</a>
-
-        <a class="btn" href="/privacy.html">Privacy Policy</a>
-        <a class="btn" href="mailto:hello@behinteractive.com?subject=FREEZE%20Support">Support</a>
+    <div class="top">
+      <a class="back" href="/">← Back</a>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="pill" href="/privacy.html">Privacy Policy</a>
+        <a class="pill" href="mailto:hello@behinteractive.com?subject=FREEZE%20Support">Support</a>
       </div>
-
-      <p class="small" style="margin-top:12px;">
-        Note: Replace the “Try the web version” link with your Base44/production link when ready.
-      </p>
     </div>
 
-    <div class="card">
-      <h2 style="margin:0 0 8px;font-size:18px;">For app stores</h2>
-      <p style="margin:0;color:rgba(234,240,255,.75);">
-        Website: <span id="siteUrl"></span><br/>
-        Support: <a href="mailto:hello@behinteractive.com">hello@behinteractive.com</a><br/>
-        Privacy policy: <a href="/privacy.html">behinteractive.com/privacy.html</a>
-      </p>
+    <h1>FREEZE</h1>
+    <p>
+      FREEZE is a nervous system regulation app designed to help users move through freeze states
+      using grounding tools, guided micro-flows, and supportive reflection.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <h2>What it does</h2>
+        <ul>
+          <li>Guided grounding flows for freeze states</li>
+          <li>Tool-based prompts (with or without a physical kit)</li>
+          <li>Gentle reflection + “I did it” completion steps</li>
+          <li>Designed for clarity, calm, and low-friction use</li>
+        </ul>
+
+        <div class="btnRow">
+          <!-- Replace the href below with your live web app link when ready -->
+          <a class="pill primary" id="tryLink" href="https://freeze-app.com">Try the web version</a>
+          <a class="pill" href="/privacy.html">Privacy Policy</a>
+          <a class="pill" href="mailto:hello@behinteractive.com?subject=FREEZE%20Support">Contact support</a>
+        </div>
+
+        <div class="small">
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>App store links</h2>
+        <div class="kv">
+          <b>Website</b><span id="websiteUrl"></span>
+          <b>Support</b><span><a href="mailto:hello@behinteractive.com">hello@behinteractive.com</a></span>
+          <b>Privacy</b><span><a href="/privacy.html">behinteractive.com/privacy.html</a></span>
+        </div>
+        <div class="small">These are the URLs you can paste into Google Play Console fields.</div>
+      </div>
     </div>
 
     <script>
-      document.getElementById("siteUrl").textContent = window.location.origin + "/freeze.html";
-      // OPTIONAL: set your live web app link here
+      // Auto-fill the Website URL field
+      document.getElementById("websiteUrl").textContent = window.location.origin + "/freeze.html";
+
+      // OPTIONAL: set your live web app link here (uncomment and paste your URL)
       // document.getElementById("tryLink").href = "https://your-freeze-app-link.com";
     </script>
   </div>
