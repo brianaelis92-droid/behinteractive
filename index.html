@@ -80,3 +80,234 @@
     }
     .pill:hover{transform: translateY(-1px); background: rgba(255,255,255,.06); border-color: rgba(234,240,255,.2)}
     .pill.primary{
+      color: #0b1220;
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+      border-color: transparent;
+    }
+
+    .hero{
+      margin-top:10px;
+      padding:28px;
+      border-radius: var(--radius2);
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:520px; height:520px;
+      background: radial-gradient(circle at 30% 30%, rgba(110,231,255,.25), transparent 60%),
+                  radial-gradient(circle at 70% 60%, rgba(167,139,250,.22), transparent 55%);
+      top:-220px; right:-180px;
+      filter: blur(6px);
+      opacity:.9;
+      pointer-events:none;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+      font-size:13px;
+    }
+    .dot{
+      width:9px; height:9px; border-radius:999px;
+      background: rgba(34,197,94,.95);
+      box-shadow: 0 0 0 4px rgba(34,197,94,.15);
+    }
+    .hero h2{
+      margin:16px 0 10px;
+      font-size: clamp(32px, 4vw, 46px);
+      letter-spacing:-.6px;
+      line-height:1.05;
+    }
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      max-width: 62ch;
+      font-size: 16px;
+    }
+
+    .ctaRow{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
+    }
+    .card{
+      grid-column: span 6;
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      backdrop-filter: blur(10px);
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px}
+    .card small{display:block; margin-top:10px; color:var(--muted2); font-size:12px}
+
+    .section{
+      margin-top:28px;
+      padding:22px;
+      border-radius: var(--radius2);
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+    }
+    .section h3{
+      margin:0 0 12px;
+      font-size:18px;
+      letter-spacing:-.2px;
+    }
+    .section p{margin:0 0 10px; color:var(--muted); max-width: 80ch}
+    .list{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+      margin-top:14px;
+    }
+    .item{
+      grid-column: span 6;
+      padding:14px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+    }
+    .item b{display:block; margin-bottom:4px}
+    .item span{color:var(--muted); font-size:14px}
+
+    .footer{
+      margin-top:26px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      color:var(--muted2);
+      font-size:13px;
+      padding:16px 2px 0;
+    }
+
+    .divider{height:1px; background: var(--line); margin-top:22px}
+
+    @media (max-width: 760px){
+      .card{grid-column: span 12}
+      .item{grid-column: span 12}
+      .topbar{flex-direction:column; align-items:flex-start}
+      .nav{justify-content:flex-start}
+      .hero{padding:22px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <a class="brand" href="#">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>BEH Interactive</h1>
+          <span>Apps • Tools • Digital experiences</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a class="pill" href="#work">Work</a>
+        <a class="pill" href="#services">Services</a>
+        <a class="pill" href="#contact">Contact</a>
+        <a class="pill primary" href="#contact">Collaborate</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="kicker"><span class="dot" aria-hidden="true"></span> Building calm, useful software</div>
+        <h2>We turn real human needs into clear digital tools.</h2>
+        <p>
+          BEH Interactive builds lightweight apps and web experiences—especially in wellness, education, and “life logistics.”
+          Clean UI, thoughtful flows, and practical results.
+        </p>
+
+        <div class="ctaRow">
+          <a class="pill primary" href="#work">See what I’m building</a>
+          <a class="pill" href="#contact">Get in touch</a>
+        </div>
+
+        <div class="grid" id="work">
+          <div class="card">
+            <h3>Current focus</h3>
+            <p>Mobile-first products, shipped fast with clean UX and strong foundations (content libraries, flows, and launch-ready pages).</p>
+            <small>Want this to feel more playful/retro? Tell me your vibe and I’ll restyle it.</small>
+          </div>
+          <div class="card">
+            <h3>What you can expect</h3>
+            <p>Clarity, momentum, and guardrails—no endless “perfecting.” Simple wins first, then iterate.</p>
+            <small>Ideal for founders, small businesses, and people building in public.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <h3>Services</h3>
+        <p>
+          Quick, high-leverage help for building and launching—without getting stuck in the weeds.
+        </p>
+
+        <div class="list">
+          <div class="item">
+            <b>Landing pages</b>
+            <span>One-page sites for apps, products, or services—fast, responsive, and conversion-friendly.</span>
+          </div>
+          <div class="item">
+            <b>App UI + content libraries</b>
+            <span>Flows, screens, state libraries, symptom libraries, prompt libraries, and onboarding.</span>
+          </div>
+          <div class="item">
+            <b>Brand basics</b>
+            <span>Name, voice, simple visual direction, and reusable templates.</span>
+          </div>
+          <div class="item">
+            <b>Launch setup</b>
+            <span>Support pages, privacy links, contact routing, and “ready for stores” polish.</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <p style="margin-top:14px;">
+          If you’re not sure what you need yet, that’s fine—describe the goal and where you feel stuck.
+        </p>
+      </section>
+
+      <section class="section" id="contact">
+        <h3>Contact</h3>
+        <p>
+          Email: <a href="mailto:hello@behinteractive.com">hello@behinteractive.com</a><br/>
+          (Swap this for any email you want.)
+        </p>
+        <p style="margin-top:10px;">
+          Or add your socials here once you’re ready.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <div>© <span id="year"></span> BEH Interactive</div>
+        <div>Built on GitHub Pages • No monthly hosting</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
