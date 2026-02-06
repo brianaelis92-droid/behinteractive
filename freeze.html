@@ -28,4 +28,63 @@
       padding:10px 12px;
       border-radius:999px;
       border:1px solid rgba(234,240,255,.14);
-      background:rgba(255,255,255,.
+      background:rgba(255,255,255,.04);
+      color:#eaf0ff;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.95));
+      border-color:transparent;
+      color:#0b1220;
+      font-weight:700;
+    }
+    ul{margin:10px 0 0 18px;color:rgba(234,240,255,.75)}
+    .small{color:rgba(234,240,255,.6);font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a href="/">← Back to BEH Interactive</a>
+
+    <h1 style="margin:14px 0 6px;">FREEZE</h1>
+    <p style="margin:0;color:rgba(234,240,255,.75);max-width:70ch;">
+      FREEZE is a nervous system regulation app designed to help users move through freeze states with grounding tools,
+      guided micro-flows, and supportive reflection.
+    </p>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px;font-size:18px;">What it does</h2>
+      <ul>
+        <li>Guided grounding flows for freeze states</li>
+        <li>Tool-based prompts (with or without a physical kit)</li>
+        <li>Gentle reflection questions + “I did it” progress</li>
+        <li>Designed for clarity, calm, and low-friction use</li>
+      </ul>
+
+      <div class="btns">
+        <a class="btn primary" href="#" id="tryLink">Try the web version</a>
+        <a class="btn" href="/privacy.html">Privacy Policy</a>
+        <a class="btn" href="mailto:hello@behinteractive.com?subject=FREEZE%20Support">Support</a>
+      </div>
+
+      <p class="small" style="margin-top:12px;">
+        Note: Replace the “Try the web version” link with your Base44/production link when ready.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2 style="margin:0 0 8px;font-size:18px;">For app stores</h2>
+      <p style="margin:0;color:rgba(234,240,255,.75);">
+        Website: <span id="siteUrl"></span><br/>
+        Support: <a href="mailto:hello@behinteractive.com">hello@behinteractive.com</a><br/>
+        Privacy policy: <a href="/privacy.html">behinteractive.com/privacy.html</a>
+      </p>
+    </div>
+
+    <script>
+      document.getElementById("siteUrl").textContent = window.location.origin + "/freeze.html";
+      // OPTIONAL: set your live web app link here
+      // document.getElementById("tryLink").href = "https://your-freeze-app-link.com";
+    </script>
+  </div>
+</body>
+</html>
